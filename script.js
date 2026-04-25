@@ -3,8 +3,19 @@ const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
+const brandLogo = document.querySelector(".brand img");
 const savedTheme = window.localStorage.getItem("codewave-theme");
 const mobileNavQuery = window.matchMedia("(max-width: 960px)");
+const darkLogoSrc = "assets/logo-code.wave.jpeg";
+const lightLogoSrc = "assets/logo-claro.jpeg";
+
+const setBrandLogo = (theme) => {
+  if (!brandLogo) {
+    return;
+  }
+
+  brandLogo.src = theme === "light" ? lightLogoSrc : darkLogoSrc;
+};
 
 const closeNav = () => {
   document.body.classList.remove("nav-open");
@@ -27,6 +38,7 @@ const openNav = () => {
 const setTheme = (theme) => {
   const isLight = theme === "light";
   document.body.classList.toggle("theme-light", isLight);
+  setBrandLogo(theme);
 
   if (themeLabel) {
     themeLabel.textContent = isLight ? "Tema escuro" : "Tema claro";
