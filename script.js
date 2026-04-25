@@ -1,6 +1,8 @@
 const path = window.location.pathname.split("/").pop() || "index.html";
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const navMenu = document.querySelector("[data-nav-menu]");
 const savedTheme = window.localStorage.getItem("codewave-theme");
 
 const setTheme = (theme) => {
@@ -18,6 +20,14 @@ document.querySelectorAll("[data-page]").forEach((link) => {
   if (link.getAttribute("href") === path) {
     link.classList.add("is-active");
   }
+
+  link.addEventListener("click", () => {
+    document.body.classList.remove("nav-open");
+
+    if (navToggle) {
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 });
 
 const portfolioList = document.querySelector("[data-portfolio-list]");
@@ -59,5 +69,12 @@ if (themeToggle) {
     const nextTheme = isLight ? "dark" : "light";
     window.localStorage.setItem("codewave-theme", nextTheme);
     setTheme(nextTheme);
+  });
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = document.body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 }
