@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code.Wave | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="site-shell topbar-inner">
+        <a class="brand" href="index.html" aria-label="Code.Wave">
+          <img src="assets/logo-code.wave.jpeg" alt="Logo Code.Wave" />
+        </a>
+        <nav class="nav" aria-label="Menu principal">
+          <a data-page href="index.html">Home</a>
+          <a data-page href="como-funciona.html">Como funciona</a>
+          <a data-page href="precos.html">Preços</a>
+          <a data-page href="portfolio.html">Portfólio</a>
+          <a data-page href="contato.html">Contato</a>
+          <a data-page href="faq.html">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-section">
+      <div class="site-shell">
+        <section class="panel page-copy section-heading">
+          <span class="eyebrow">Alguns tipos de projeto</span>
+          <h2>Projetos realizados</h2>
+          <p>
+            Site para empresas locais, páginas de vendas, sites pessoais e sites institucionais. Estou sempre
+            focado em criar designs modernos e funcionais.
+          </p>
+        </section>
+
+        <section class="portfolio-grid">
+          <article class="panel portfolio-card">
+            <h3>Site para empresas locais</h3>
+            <p>Ideal para apresentar serviços, horários, localização e fortalecer a presença online.</p>
+          </article>
+          <article class="panel portfolio-card">
+            <h3>Página de vendas</h3>
+            <p>Estrutura pensada para apresentar oferta, vantagens e facilitar contato com clientes.</p>
+          </article>
+          <article class="panel portfolio-card">
+            <h3>Sites pessoais e institucionais</h3>
+            <p>Projetos para profissionais, marcas e empresas que querem uma presença digital mais forte.</p>
+          </article>
+        </section>
+
+        <section class="panel page-copy" style="margin-top: 24px;">
+          <span class="eyebrow">Seus links editáveis</span>
+          <h2>Meus melhores links</h2>
+          <p>
+            Esta área puxa os projetos do arquivo <strong>portfolio-data.js</strong>. Sempre que quiser trocar,
+            adicionar ou remover links, basta editar esse arquivo.
+          </p>
+          <div class="portfolio-grid" data-portfolio-list></div>
+          <div class="note">
+            <p>Para atualizar depois: abra <strong>portfolio-data.js</strong> e troque o título, a descrição e a URL de cada projeto.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="site-shell panel footer-box">
+        <span>Code.Wave</span>
+        <span>Criamos sites. Conectamos ideias.</span>
+      </div>
+    </footer>
+
+    <script src="portfolio-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
